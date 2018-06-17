@@ -1,0 +1,130 @@
+@import '../../sass/base';
+
+body {
+  background-color: #f0f0f0;
+  min-height: $minimumPageHeight;
+}
+
+.opacity {
+  opacity: 0.8;
+}
+
+.container {
+  position: relative;
+
+  .header-block {
+    position: relative;
+    width: 100vw;
+    background-color: #fff;
+    padding: 2rem;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 30%;
+    }
+  }
+
+  .body-block {
+    position: relative;
+    padding: 3.25rem 1rem;
+
+    .introduction {
+      padding: 0 1.75rem;
+
+      p {
+        line-height: 1.75rem;
+      }
+    }
+  }
+
+  .search-dimensions {
+    background-color: #dd161e;
+    padding: 2rem 3rem;
+    color: #fff;
+
+    &_fields {
+      width: 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    &_selects {
+      width: 70%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+
+    &_selectfield {
+      width: 30%;
+      min-height: 2.6rem;
+      background-color: #fff;
+    }
+
+    .submit {
+      width: 25%;
+      background-color: #4e070c;
+      color: #fff;
+      border: none;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 5px;
+    }
+  }
+
+}
+
+@media screen and (max-width: $breakpointLarge) {
+  .container {
+    .search-dimensions {
+      &_fields {
+        flex-flow: column nowrap;
+      }
+
+      &_selects {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .submit {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointMedium) {
+  .container {
+    .header-block img {
+      max-width: none;
+    }
+
+    .body-block {
+      .introduction {
+        padding: 0;
+
+        h1 {
+          font-size: 3rem;
+          margin: 0;
+        }
+      }
+
+      .search-dimensions {
+        padding: 1rem 2rem;
+
+        &_fields, &_selects {
+          flex-flow: column nowrap;
+          width: 100%;
+        }
+
+        &_selectfield, .submit {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSmall) {}
+@media screen and (max-width: $breakpointXSmall) {}

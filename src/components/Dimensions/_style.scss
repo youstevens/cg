@@ -1,0 +1,113 @@
+@import '../../sass/settings/variables';
+@import '../../sass/settings/breakpoints';
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+  min-height: $minimumContentHeight;
+  transition-delay: 1s;
+  transition: height 1s ease-out;
+}
+
+.hideError {
+  height: 0;
+  display: none;
+}
+
+.showError {
+  height: 20rem;
+  display: block;
+}
+
+.search-result-wrapper, .search-result-not-found-wrapper {
+  margin: 0 2.65rem;
+}
+
+.search-result-not-found-wrapper {
+  margin-top: 2.65rem;
+}
+
+.search-result, .search-result-not-found {
+  min-height: $minimumContentHeight;
+}
+
+.search-result {
+  &_overview {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      line-height: 1.65rem;
+    }
+  }
+
+  &_heading {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #000;
+    padding: 1rem;
+    color: #fff;
+
+    div {
+      justify-content: space-between;
+      width: 30%;
+
+      &.search-result_variant-label {
+        width: 40%;
+      }
+    }
+  }
+
+  &_stats {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 1rem;
+
+      &:nth-child(odd) {
+        background-color: #e4e4e4;
+      }
+
+      &:nth-child(even) {
+        background-color: #f0f0f0;
+      }
+
+      &.sm {
+        padding: 0;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpointLarge) {}
+@media screen and (max-width: $breakpointMedium) {
+  .search-result-wrapper {
+    margin: 0 1rem;
+  }
+  .search-result-not-found-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .search-result {
+    &_overview {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: $breakpointSmall) {}
+@media screen and (max-width: $breakpointXSmall) {
+  .search-result-wrapper {
+    margin: 0;
+  }
+}
